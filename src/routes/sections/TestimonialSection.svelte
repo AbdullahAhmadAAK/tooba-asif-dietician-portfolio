@@ -163,7 +163,7 @@
   <div class="flex flex- gap-2">
     {#each Array(Math.ceil(testimonials.length / testimonialsToShow)) as _, i}
       <span
-        class="w-2.5 h-2.5 rounded-full inline-block"
+        class="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full inline-block"
         style="background-color: {i ===
         Math.floor(currentIndex / testimonialsToShow)
           ? '#356554'
@@ -179,6 +179,12 @@
 
 <style>
   .mi {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .mi {
+      font-size: 2rem;
+    }
   }
 </style>
