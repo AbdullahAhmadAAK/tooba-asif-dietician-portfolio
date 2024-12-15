@@ -45,7 +45,7 @@
     <p
       class="md:text-start text-center lg:text-[18px] md:text-[16px] text-[14px] text-[#333333] max-w-[80%] font-medium"
     >
-      Welcome to Nutritionist, your partner in achieving optimal health through
+      Welcome to Tooba Nutrition, your partner in achieving optimal health through
       personalized nutrition coaching. I am here to guide you on your weight
       loss journey, providing customized plans and ongoing support. Start your
       transformation today and experience the power of personalized nutrition

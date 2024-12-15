@@ -66,7 +66,5 @@
         <p class="text-green-500 text-sm mt-2">{work.timeline}</p>
       </div>
     </div>
-    <!-- Divider -->
-    <hr class="w-full max-w-3xl border-green-300 border-t-2" />
   {/each}
 </div>
