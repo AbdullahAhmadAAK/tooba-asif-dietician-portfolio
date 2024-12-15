@@ -104,7 +104,7 @@
   />
 </svelte:head>
 
-<div class="flex flex-col gap-3 md:mt-32 sm:mt-[100px] mt-12">
+<div class="flex flex-col gap-3 md:mt-32 sm:mt-[100px] mt-12" id="testimonials">
   <h4
     class="text-[#262626] text-center md:text-[48px] sm:text-[38px] text-[28px] font-bold"
   >

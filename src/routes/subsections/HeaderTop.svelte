@@ -20,6 +20,7 @@
 </script>
 
 <div
+  id="home"
   class="flex flex-row justify-center md:justify-between rounded-md {horizontalSectionPaddingClass} my-4 {horizontalSectionMarginClass} bg-[#234338]"
 >
   {#if isLaptopView}

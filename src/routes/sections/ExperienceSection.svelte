@@ -46,14 +46,14 @@
   ];
 </script>
 
-<h1 class="font-bold md:text-[48px] sm:text-[38px] text-[28px] text-[#262626] mt-20 h-14 text-center">
+<h1 class="font-bold md:text-[48px] sm:text-[38px] text-[28px] text-[#262626] mt-20 h-14 text-center" id="experience">
   Work Experience
 </h1>
 
 <div class="flex flex-col {horizontalSectionMarginClass} mt-10 gap-y-8 items-center">
   <!-- generates rows -->
   {#each works as work}
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-4 w-full max-w-3xl px-4 py-6 bg-[#F6FBE9] shadow-lg hover:shadow-xl rounded-lg transition-all duration-300">
+    <div class="flex flex-col md:flex-row items-center gap-4 w-full max-w-3xl px-4 py-6 bg-[#F6FBE9] shadow-lg hover:shadow-xl rounded-lg transition-all duration-300">
       <!-- Work Image -->
       <img
         src={work.image}
@@ -63,7 +63,7 @@
       
       <!-- Content Section -->
       <div class="flex flex-1 flex-col">
-        <h1 class="text-lg md:text-xl font-semibold text-green-700 mb-2">
+        <h1 class="text-lg md:text-xl text-center font-semibold text-green-700 mb-2">
           {work.title}
         </h1>
         <div class="flex flex-wrap items-center gap-4">
@@ -87,7 +87,7 @@
       </div>
       
       <!-- Actions Section -->
-      <div class="flex flex-col items-start md:items-end">
+      <div class="flex flex-col items-center md:items-end">
         <button
           class="bg-green-100 text-green-600 text-xs md:text-sm font-semibold inline-block rounded-full py-1 px-4 hover:bg-green-200 transition-all duration-300"
         >

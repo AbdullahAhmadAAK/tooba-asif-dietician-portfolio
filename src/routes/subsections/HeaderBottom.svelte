@@ -4,16 +4,16 @@
   let showMenu = false; // To toggle the visibility of the vertical menu
 
   const links = [
-    { title: 'About', link: '#about' },
+    { title: 'Home', link: '#home' },
     { title: 'Services', link: '#services' },
-    { title: 'Blogs', link: '#blogs' },
     { title: 'Testimonials', link: '#testimonials' },
     { title: 'Experience', link: '#experience' },
+    { title: 'Education', link: '#education' },
   ];
 
   const contactButtonDetails = {
     title: 'Contact Us',
-    link: '#contact-us',
+    link: '#contact',
   };
 </script>
 

@@ -6,6 +6,7 @@
   import ExperienceSection from "./sections/ExperienceSection.svelte";
   import EducationSection from "./sections/EducationSection.svelte";
   import ContactSection from "./sections/ContactSection.svelte";
+  import FooterSection from "./sections/FooterSection.svelte";
 </script>
 
 <HeaderSection />
@@ -15,3 +16,4 @@
 <ExperienceSection />
 <EducationSection />
 <ContactSection />
+<FooterSection />
