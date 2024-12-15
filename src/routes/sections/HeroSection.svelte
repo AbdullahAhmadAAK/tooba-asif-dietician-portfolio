@@ -1,10 +1,12 @@
 <div class="flex md:flex-row flex-col md:gap-12">
+  <!-- Desktop mode: Tooba's Picture -->
   <img
     src="hero/tooba-asif-dietician-nutritionist.png"
     alt=""
     class="aspect-square md:w-[40%] md:rounded-br-3xl md:rounded-bl-[0] rounded-b-3xl hidden sm:block"
   />
 
+  <!-- Mobile mode: Tooba's Picture -->
   <div class="relative sm:hidden">
     <img
       src="hero/tooba-asif-dietician-nutritionist.png"
