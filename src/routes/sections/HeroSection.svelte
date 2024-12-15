@@ -53,21 +53,23 @@
     </p>
 
     <div class="flex flex-row mt-8 gap-5">
-      <a href="#contact-us">
+      <a href="#contact">
         <button
-          class="rounded-lg lg:text-[18px] text-[14px] font-semibold text-[#262626] bg-[#CBEA7B] py-4 px-5"
-          >Get Started Today</button
+          class="rounded-lg lg:text-[18px] text-[14px] font-semibold text-[#262626] bg-[#CBEA7B] py-4 px-5 transition duration-300 ease-in-out transform hover:bg-[#A8D449] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#CBEA7B]"
         >
+          Get Started Today
+        </button>
       </a>
-
-      <a href="#contact-us">
+    
+      <a href="#contact">
         <button
-          class="rounded-lg lg:text-[18px] text-[14px] font-semibold text-[#262626] border border-[#E5F5BD] py-4 px-5"
-          >Book a Demo</button
+          class="rounded-lg lg:text-[18px] text-[14px] font-semibold text-[#262626] border border-[#E5F5BD] py-4 px-5 transition duration-300 ease-in-out transform hover:bg-[#CBEA7B] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#CBEA7B]"
         >
+          Book a Demo
+        </button>
       </a>
     </div>
-
+    
     <div class="md:flex hidden flex-row gap-2 mt-6 items-center">
       <img
         src="hero/three-girls-collage.png"

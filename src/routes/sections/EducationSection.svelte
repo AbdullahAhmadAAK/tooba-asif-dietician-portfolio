@@ -33,10 +33,10 @@
       
       <!-- Content Section -->
       <div class="flex flex-1 flex-col">
-        <h1 class="text-lg md:text-xl text-center font-semibold text-green-700 mb-2">
+        <h1 class="text-lg md:text-xl text-center md:text-start font-semibold text-green-700 mb-2">
           {work.title}
         </h1>
-        <div class="flex  mx-auto items-center gap-4">
+        <div class="flex  items-center gap-4">
           <div class="flex items-center gap-2">
             <img
               src={work.icon}
