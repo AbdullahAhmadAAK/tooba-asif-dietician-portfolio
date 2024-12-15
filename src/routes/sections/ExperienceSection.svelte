@@ -1,23 +1,53 @@
 <script>
-      import { horizontalSectionMarginClass } from "$lib/portfolio-details";
-
+    import { horizontalSectionMarginClass } from "$lib/portfolio-details";
 
   const works = [
     {
-      image: "education/university-of-lahore-logo.png",
-      title: "Bachelor of Science - Dietitics and Nutritional Sciences",
+      image: "experience/dha-logo.png",
+      title: "Clinical Dietician",
       icon: "experience/office-logo.png",
-      subheading: "University of Lahore",
+      subheading: "Avicenna Clinic",
       icon2: "experience/location-icon.png",
-      subheading2: "Rawalpindi, Pakistan",
-      button: "Onsite",
-      timeline: "Aug. 2019 - Jul. 2024",
-    }
+      subheading2: "Onsite",
+      button: "Part-time",
+      timeline: "Jun. 2024 - Aug. 2024",
+    },
+    {
+      image: "experience/cmh-army-logo.png",
+      title: "Dietician Trainee",
+      icon: "experience/office-logo.png",
+      subheading: "Nelson Medical Complex",
+      icon2: "experience/location-icon.png",
+      subheading2: "Onsite",
+      button: "Internship",
+      timeline: "Jul. 2024 - Aug. 2024",
+    },
+    {
+      image: "experience/cmh-army-logo.png",
+      title: "Intern Dietician",
+      icon: "experience/office-logo.png",
+      subheading: "CMH Rawalpindi",
+      icon2: "experience/location-icon.png",
+      subheading2: "Onsite",
+      button: "Internship",
+      timeline: "Aug. 2023 - Oct. 2023",
+    },
+    {
+      image: "experience/cmh-army-logo.png",
+      title: "Intern Dietician",
+      icon: "experience/office-logo.png",
+      subheading: "CMH Rawalpindi",
+      icon2: "experience/location-icon.png",
+      subheading2: "Onsite",
+      button: "Internship",
+      timeline: "Jul. 2022 - Aug. 2022",
+    },
+  
   ];
 </script>
 
 <h1 class="font-bold md:text-[48px] sm:text-[38px] text-[28px] text-[#262626] mt-20 h-14 text-center">
-  Education
+  Work Experience
 </h1>
 
 <div class="flex flex-col {horizontalSectionMarginClass} mt-10 gap-y-8 items-center">
@@ -70,3 +100,5 @@
     <hr class="w-full max-w-3xl border-green-300 border-t-2" />
   {/each}
 </div>
+
+

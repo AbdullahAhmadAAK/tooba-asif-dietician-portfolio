@@ -70,7 +70,21 @@
   // Adjust testimonialsToShow on the client
   onMount(() => {
     const updateTestimonialsToShow = () => {
-      testimonialsToShow = window.innerWidth <= 768 ? 1 : 3;
+
+      let newTestimonialsToShow = 0
+
+      if (window.outerWidth > 1200) {
+        newTestimonialsToShow = 3
+      } else if (window.outerWidth > 1024) {
+        newTestimonialsToShow = 2
+      } else if (window.outerWidth > 640) {
+        newTestimonialsToShow = 1
+      } else if (window.outerWidth <= 640) {
+        newTestimonialsToShow = 1
+      }
+
+      testimonialsToShow = newTestimonialsToShow
+      // testimonialsToShow = window.outerWidth <= 1200 ? 1 : 3;
     };
 
     updateTestimonialsToShow(); // Set initial value
@@ -108,47 +122,55 @@
 <div
   class="flex flex-row justify-center md:mt-20 mt-12 gap-x-8 {horizontalSectionMarginClass}"
 >
-  {#each testimonials.slice(currentIndex, currentIndex + testimonialsToShow) as testimonial}
-    <div
-      class="flex h-full flex-col rounded-2xl overflow-hidden group transition transform hover:scale-105 hover:shadow-lg"
+{#each testimonials.slice(currentIndex, currentIndex + testimonialsToShow) as testimonial}
+<div
+  class="flex h-full flex-col rounded-2xl overflow-hidden group transition transform hover:scale-105 hover:shadow-lg"
+>
+  <!-- Top Section -->
+  <div
+    class="flex flex-col md:gap-[50px] gap-10 bg-[#FAFDF5] md:p-11 sm:p-8 p-6 rounded-t-2xl transition-colors duration-300 group-hover:bg-[#D6F5A1]"
+  >
+    <img
+      src="testimonials/quote.png"
+      alt="quote icon"
+      class="md:w-10 md:h-10 w-8 h-8 group-hover:scale-110 transition-transform duration-300"
+    />
+    <p
+      class="font-medium md:text-[18px] sm:text-[16px] text-[14px] text-[#444444] group-hover:text-[#1F1F1F] transition-colors duration-300"
     >
-      <!-- Top Section -->
-      <div
-        class="flex flex-col md:gap-[50px] gap-10 bg-[#FAFDF5] md:p-11 sm:p-8 p-6 rounded-t-2xl transition-colors duration-300 group-hover:bg-[#D6F5A1]"
-      >
-        <img
-          src="testimonials/quote.png"
-          alt="quote icon"
-          class="md:w-10 md:h-10 w-8 h-8 group-hover:scale-110 transition-transform duration-300"
-        />
-        <p
-          class="font-medium md:text-[18px] sm:text-[16px] text-[14px] text-[#444444] group-hover:text-[#1F1F1F] transition-colors duration-300"
-        >
-          {testimonial.text}
-        </p>
-      </div>
+      {testimonial.text}
+    </p>
+  </div>
 
-      <!-- Bottom Section -->
-      <div
-        class="flex items-center gap-3 bg-[#E6F4D7] md:py-8 md:px-5 sm:py-5 sm:px-8 py-5 px-6 rounded-b-2xl transition-colors duration-300 group-hover:bg-[#AEE06C]"
+  <!-- Bottom Section -->
+  <div
+    class="flex items-center gap-3 bg-[#E6F4D7] md:py-8 md:px-5 sm:py-5 sm:px-8 py-5 px-6 rounded-b-2xl transition-colors duration-300 group-hover:bg-[#AEE06C]"
+  >
+    <img
+      src={testimonial.image}
+      alt="testimonial image"
+      class="rounded-lg
+      md:min-h-[60px] md:max-h-[60px] md:min-w-[60px] md:max-w-[60px]
+      sm:min-h-[50px] sm:max-h-[50px] sm:min-w-[50px] sm:max-w-[50px]
+      min-h-[40px] max-h-[40px] min-w-[40px] max-w-[40px]
+      group-hover:scale-110 transition-transform duration-300"
+    />
+    <div class="flex flex-col gap-2">
+      <p
+        class="font-semibold md:text-[18px] text-[16px] text-[#333333] group-hover:text-[#1A1A1A] transition-colors duration-300"
       >
-        <img
-          src={testimonial.image}
-          alt=""
-          class="rounded-lg
-          md:min-h-[60px] md:max-h-[60px] md:min-w-[60px] md:max-w-[60px]
-          sm:min-h-[50px] sm:max-h-[50px] sm:min-w-[50px] sm:max-w-[50px]
-          min-h-[40px] max-h-[40px] min-w-[40px] max-w-[40px]
-          group-hover:scale-110 transition-transform duration-300"
-        />
-        <p
-          class="font-semibold md:text-[18px] text-[16px] text-[#333333] group-hover:text-[#1A1A1A] transition-colors duration-300"
-        >
-          {testimonial.name}
-        </p>
-      </div>
+        {testimonial.name}
+      </p>
+      <p
+        class="font-medium text-[#666666] md:text-[16px] text-[14px] group-hover:text-[#1A1A1A] transition-colors duration-300"
+      >
+        {testimonial.designation}
+      </p>
     </div>
-  {/each}
+  </div>
+</div>
+{/each}
+
 </div>
 
 <div class="flex flex-row mt-10 gap-x-4 items-center justify-center">
