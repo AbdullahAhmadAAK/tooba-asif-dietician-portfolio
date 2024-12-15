@@ -45,30 +45,30 @@
 </script>
 
 <div class="flex flex-col gap-3">
-  <h4 class="text-[#262626] text-center text-[48px] font-bold">Features</h4>
+  <h4 class="text-[#262626] text-center md:text-[48px] sm:text-[38px] text-[28px] font-bold">Features</h4>
 
-  <p class="text-[#333333] text-center text-[18px] font-medium">
+  <p class="text-[#333333] text-center md:text-[18px] sm:text-[16px] text-[14px] font-medium">
     Here are the different services I provide to help you achieve your health
     goals and embrace a healthier lifestyle.
   </p>
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-20 {horizontalSectionMarginClass}">
+<div class="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-5 md:mt-20 sm:mt-15 mt-12 {horizontalSectionMarginClass}">
   {#each features as feature}
     <div
-      class="bg-[#F6FBE9] flex flex-col gap-6 py-10 px-14 rounded-xl transition duration-300 hover:bg-[#D6F5A1] hover:shadow-lg hover:scale-105"
+      class="bg-[#F6FBE9] flex group flex-col gap-6 md:py-10 md:px-14 sm:p-10 p-7 rounded-xl transition duration-300 hover:bg-[#D6F5A1] hover:shadow-lg hover:scale-105"
     >
-      <div class="flex items-center gap-4">
+      <div class="flex items-center md:gap-4 gap-[10px]">
         <div
-          class="flex justify-center items-center bg-[#CBEA7B] rounded-lg w-[68px] h-[68px] transition duration-300 hover:bg-[#AEE06C]"
+          class="flex justify-center items-center bg-[#CBEA7B] rounded-lg md:min-w-[68px] md:min-h-[68px] sm:min-w-[54px] sm:min-h-[54px] min-w-[48px] min-h-[48px] transition duration-300 group-hover:bg-[#AEE06C]"
         >
-          <img src={feature.image} alt="" class="w-10 h-10" />
+          <img src={feature.image} alt="" class="md:w-10 md:h-10 sm:w-7 sm:h-7 w-6 h-6" />
         </div>
-        <h5 class="text-[24px] font-semibold text-[#262626] transition duration-300 hover:text-[#1A1A1A]">
+        <h5 class="md:text-[24px] sm:text-[20px] text-[18px] font-semibold text-[#262626] transition duration-300 group-hover:text-[#1A1A1A]">
           {feature.title}
         </h5>
       </div>
-      <p class="text-[18px] font-medium text-[#333333] transition duration-300 hover:text-[#1F1F1F]">
+      <p class="md:text-[18px] sm:text-[16px] text-[14px] font-medium text-[#333333] transition duration-300 group-hover:text-[#1F1F1F]">
         {feature.description}
       </p>
     </div>
