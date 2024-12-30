@@ -212,7 +212,7 @@
   }
 
   #testimonials-section {
-    background-image: url("experience/tooba-testimonials.png");
+    background-image: url("/experience/tooba-testimonials.png");
     background-size: cover; /* Ensures the image fills the width or height */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: top center; /* Aligns the image to the top */
