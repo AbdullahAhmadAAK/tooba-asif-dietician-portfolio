@@ -22,7 +22,7 @@
           alt=""
         />
         <p class="text-[20px] font-semibold">
-          <span class="text-[#468671] text-bold">430+</span>
+          <span class="text-[#468671] text-bold">50+</span>
           Happy Customers
         </p>
       </div>
@@ -45,11 +45,11 @@
     <p
       class="md:text-start text-center lg:text-[18px] md:text-[16px] text-[14px] text-[#333333] max-w-[80%] font-medium"
     >
-      Welcome to Tooba Nutrition, your partner in achieving optimal health through
-      personalized nutrition coaching. I am here to guide you on your weight
-      loss journey, providing customized plans and ongoing support. Start your
-      transformation today and experience the power of personalized nutrition
-      coaching.
+      Welcome to Tooba Nutrition, your partner in achieving optimal health
+      through personalized nutrition coaching. I am here to guide you on your
+      weight loss journey, providing customized plans and ongoing support. Start
+      your transformation today and experience the power of personalized
+      nutrition coaching.
     </p>
 
     <div class="flex flex-row mt-8 gap-5">
@@ -60,7 +60,7 @@
           Get Started Today
         </button>
       </a>
-    
+
       <a href="#contact">
         <button
           class="rounded-lg lg:text-[18px] text-[14px] font-semibold text-[#262626] border border-[#E5F5BD] py-4 px-5 transition duration-300 ease-in-out transform hover:bg-[#CBEA7B] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#CBEA7B]"
@@ -69,7 +69,7 @@
         </button>
       </a>
     </div>
-    
+
     <div class="md:flex hidden flex-row gap-2 mt-6 items-center">
       <img
         src="hero/three-girls-collage.png"
@@ -77,7 +77,7 @@
         alt=""
       />
       <p class="text-[20px] font-semibold">
-        <span class="text-[#468671] text-bold">430+</span>
+        <span class="text-[#468671] text-bold">50+</span>
         Happy Customers
       </p>
     </div>

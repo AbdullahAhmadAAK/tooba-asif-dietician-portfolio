@@ -1,4 +1,5 @@
 <script>
+  import TestimonialCardBottomPart from "../subsections/TestimonialCardBottomPart.svelte";
   import { horizontalSectionMarginClass } from "$lib/portfolio-details";
   import { onMount } from "svelte";
 
@@ -8,33 +9,38 @@
       name: "Manahel Asif Shaykh",
       designation: "Influencer",
       image: "testimonials/animated-woman.jpg",
+      hasLink: false,
     },
     {
       text: "Her expertise and personalized approach have made a significant impact on my health and well-being. She truly listens and tailors advice to suit my needs. I highly recommend her to anyone seeking reliable and thoughtful nutrition support.",
       name: "Abdullah Ahmad",
       designation: "Software Engineer",
       image: "testimonials/animated-man.jpeg",
+      link: "https://www.linkedin.com/in/abdullah-ahmad-aak/",
+      hasLink: true,
     },
-
     {
       text: "I have lost 2 kgs and it's only been one and a half week! The meals are so fun to make and I am enjoying following my diet plan. Definitely signing up for more!",
       name: "Rimsha Imran",
       designation: "Clinical Psychologist and NLP Coach",
       image: "testimonials/animated-woman.jpg",
+      hasLink: false,
     },
 
     {
-      text: "My doctor gave me a new medicine for my diabetes but my fasting sugar levels would still remain above 120g/dl. It is the first time in so long that my fasting blood sugar was 109g/dl after beginning working with Dn. Tooba. Now I'm even more determined to continue my plan.",
+      text: "My doctor gave me a new medicine for my diabetes but my fasting sugar levels would still remain above 120mg/dl. It is the first time in so long that my fasting blood sugar was 109mg/dl after beginning working with Dn. Tooba. Now I'm even more determined to continue my plan.",
       name: "Saba Aamir",
       designation: "Homemaker",
       image: "testimonials/animated-woman.jpg",
+      hasLink: false,
     },
 
     {
       text: "I recently started using Happy Gut Herbal Powder and I genuinely feel lighter and less bloated than usual and I love it!",
       name: "Nosheen Usman",
-      designation: "Coordinator Montessori HSGTR Rawalpindi",
+      designation: "Coordinator Montessori HSGTR",
       image: "testimonials/animated-woman.jpg",
+      hasLink: false,
     },
 
     {
@@ -42,17 +48,21 @@
       name: "Mahwish",
       designation: "Homemaker",
       image: "testimonials/animated-woman.jpg",
+      hasLink: false,
     },
 
     {
       text: "I followed Dn. Tooba's plan for a month and my belly fat got reduced by one belt hole! I feel great.",
       name: "Kashif Abbasi",
-      designation: "Not Specified",
+      designation: "Pakistan Army Brigadier (retired)",
       image: "testimonials/animated-man.jpeg",
+      hasLink: false,
     },
   ];
 
   let currentIndex = 0;
+
+  let isMounted = false;
   let testimonialsToShow = 3; // Default to desktop count
 
   function goLeft() {
@@ -70,24 +80,25 @@
   // Adjust testimonialsToShow on the client
   onMount(() => {
     const updateTestimonialsToShow = () => {
-
-      let newTestimonialsToShow = 0
+      let newTestimonialsToShow = 0;
 
       if (window.outerWidth > 1200) {
-        newTestimonialsToShow = 3
+        newTestimonialsToShow = 3;
       } else if (window.outerWidth > 1024) {
-        newTestimonialsToShow = 2
+        newTestimonialsToShow = 2;
       } else if (window.outerWidth > 640) {
-        newTestimonialsToShow = 1
+        newTestimonialsToShow = 1;
       } else if (window.outerWidth <= 640) {
-        newTestimonialsToShow = 1
+        newTestimonialsToShow = 1;
       }
 
-      testimonialsToShow = newTestimonialsToShow
+      testimonialsToShow = newTestimonialsToShow;
       // testimonialsToShow = window.outerWidth <= 1200 ? 1 : 3;
     };
 
     updateTestimonialsToShow(); // Set initial value
+    isMounted = true;
+
     window.addEventListener("resize", updateTestimonialsToShow);
 
     // Cleanup the event listener on component destroy
@@ -104,99 +115,81 @@
   />
 </svelte:head>
 
-<div class="flex flex-col gap-3 md:mt-32 sm:mt-[100px] mt-12" id="testimonials">
-  <h4
-    class="text-[#262626] text-center md:text-[48px] sm:text-[38px] text-[28px] font-bold"
-  >
-    Our Testimonials
-  </h4>
-
-  <p
-    class="text-[#333333] text-center md:text-[18px] sm:text-[16px] text-[14px] font-medium w-[80%] mx-auto"
-  >
-    Our satisfied clients share their success stories and experiences on their
-    journey to better health and well-being.
-  </p>
-</div>
-
-<div
-  class="flex flex-row justify-center md:mt-20 mt-12 gap-x-8 {horizontalSectionMarginClass}"
->
-{#each testimonials.slice(currentIndex, currentIndex + testimonialsToShow) as testimonial}
-<div
-  class="flex h-full flex-col rounded-2xl overflow-hidden group transition transform hover:scale-105 hover:shadow-lg"
->
-  <!-- Top Section -->
+<div id="testimonials-section">
   <div
-    class="flex flex-col md:gap-[50px] gap-10 bg-[#FAFDF5] md:p-11 sm:p-8 p-6 rounded-t-2xl transition-colors duration-300 group-hover:bg-[#D6F5A1]"
+    class="flex flex-col gap-3 md:mt-32 sm:mt-[100px] mt-12"
+    id="testimonials"
   >
-    <img
-      src="testimonials/quote.png"
-      alt="quote icon"
-      class="md:w-10 md:h-10 w-8 h-8 group-hover:scale-110 transition-transform duration-300"
-    />
-    <p
-      class="font-medium md:text-[18px] sm:text-[16px] text-[14px] text-[#444444] group-hover:text-[#1F1F1F] transition-colors duration-300"
+    <h4
+      class="text-white text-center md:text-[48px] sm:text-[38px] text-[28px] font-bold"
     >
-      {testimonial.text}
+      Our Testimonials
+    </h4>
+
+    <p
+      class="text-white text-center md:text-[18px] sm:text-[16px] text-[14px] font-medium w-[80%] mx-auto"
+    >
+      Our satisfied clients share their success stories and experiences on their
+      journey to better health and well-being.
     </p>
   </div>
 
-  <!-- Bottom Section -->
-  <div
-    class="flex items-center gap-3 bg-[#E6F4D7] md:py-8 md:px-5 sm:py-5 sm:px-8 py-5 px-6 rounded-b-2xl transition-colors duration-300 group-hover:bg-[#AEE06C]"
-  >
-    <img
-      src={testimonial.image}
-      alt="testimonial image"
-      class="rounded-lg
-      md:min-h-[60px] md:max-h-[60px] md:min-w-[60px] md:max-w-[60px]
-      sm:min-h-[50px] sm:max-h-[50px] sm:min-w-[50px] sm:max-w-[50px]
-      min-h-[40px] max-h-[40px] min-w-[40px] max-w-[40px]
-      group-hover:scale-110 transition-transform duration-300"
-    />
-    <div class="flex flex-col gap-2">
-      <p
-        class="font-semibold md:text-[18px] text-[16px] text-[#333333] group-hover:text-[#1A1A1A] transition-colors duration-300"
-      >
-        {testimonial.name}
-      </p>
-      <p
-        class="font-medium text-[#666666] md:text-[16px] text-[14px] group-hover:text-[#1A1A1A] transition-colors duration-300"
-      >
-        {testimonial.designation}
-      </p>
+  {#if isMounted}
+    <div
+      class="flex flex-row justify-center md:mt-20 mt-12 gap-x-8 {horizontalSectionMarginClass}"
+    >
+      {#each testimonials.slice(currentIndex, currentIndex + testimonialsToShow) as testimonial}
+        <div
+          class="flex min-h-[550px] flex-col rounded-2xl overflow-hidden group transition transform hover:scale-105 hover:shadow-lg"
+          style="flex: 1 1 calc(80% - 2rem); max-width: calc(80% - 2rem);"
+        >
+          <!-- Top Section -->
+          <div
+            class="flex flex-col flex-1 md:gap-[50px] gap-10 bg-[#FAFDF5] md:p-11 sm:p-8 p-6 rounded-t-2xl transition-colors duration-300 group-hover:bg-[#D6F5A1]"
+          >
+            <img
+              src="testimonials/quote.png"
+              alt="quote icon"
+              class="md:w-10 md:h-10 w-8 h-8 group-hover:scale-110 transition-transform duration-300"
+            />
+            <p
+              class="font-medium md:text-[18px] sm:text-[16px] text-[14px] text-[#444444] group-hover:text-[#1F1F1F] transition-colors duration-300"
+            >
+              {testimonial.text}
+            </p>
+          </div>
+          <!-- Bottom Section -->
+          <TestimonialCardBottomPart {testimonial} />
+        </div>
+      {/each}
     </div>
+  {/if}
+
+  <div class="flex flex-row mt-10 gap-x-4 items-center justify-center">
+    <button
+      on:click={goLeft}
+      class="flex justify-center items-center"
+      aria-label="left-arrow-button"
+    >
+      <i class="mi mi-arrow-left"><span class="u-sr-only"></span></i>
+    </button>
+
+    <div class="flex flex- gap-2">
+      {#each Array(Math.ceil(testimonials.length / testimonialsToShow)) as _, i}
+        <span
+          class="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full inline-block"
+          style="background-color: {i ===
+          Math.floor(currentIndex / testimonialsToShow)
+            ? '#356554'
+            : '#E5F5BD'}"
+        ></span>
+      {/each}
+    </div>
+
+    <button on:click={goRight} class="" aria-label="right-arrow-button">
+      <i class="mi mi-arrow-right"><span class="u-sr-only"></span></i>
+    </button>
   </div>
-</div>
-{/each}
-
-</div>
-
-<div class="flex flex-row mt-10 gap-x-4 items-center justify-center">
-  <button
-    on:click={goLeft}
-    class="flex justify-center items-center"
-    aria-label="left-arrow-button"
-  >
-    <i class="mi mi-arrow-left"><span class="u-sr-only"></span></i>
-  </button>
-
-  <div class="flex flex- gap-2">
-    {#each Array(Math.ceil(testimonials.length / testimonialsToShow)) as _, i}
-      <span
-        class="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full inline-block"
-        style="background-color: {i ===
-        Math.floor(currentIndex / testimonialsToShow)
-          ? '#356554'
-          : '#E5F5BD'}"
-      ></span>
-    {/each}
-  </div>
-
-  <button on:click={goRight} class="" aria-label="right-arrow-button">
-    <i class="mi mi-arrow-right"><span class="u-sr-only"></span></i>
-  </button>
 </div>
 
 <style>
@@ -208,5 +201,19 @@
     .mi {
       font-size: 2rem;
     }
+  }
+
+  #testimonials-section {
+    background-image: url("experience/tooba-testimonials.png");
+    background-size: cover; /* Ensures the image fills the width or height */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: top center; /* Aligns the image to the top */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Adds a dark overlay (adjust opacity as needed) */
+    background-blend-mode: darken; /* Blends the dark color with the image */
   }
 </style>
