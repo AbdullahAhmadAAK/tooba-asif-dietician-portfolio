@@ -113,6 +113,10 @@
     rel="stylesheet"
     href="https://unpkg.com/mono-icons@1.0.5/iconfont/icons.css"
   />
+  <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+  ></script>
 </svelte:head>
 
 <div id="testimonials-section">
@@ -165,16 +169,16 @@
     </div>
   {/if}
 
-  <div class="flex flex-row mt-10 gap-x-4 items-center justify-center">
+  <div class="flex flex-row mt-10 pb-4 gap-x-4 items-center justify-center">
     <button
       on:click={goLeft}
-      class="flex justify-center items-center"
+      class="flex justify-center items-center text-[40px]"
       aria-label="left-arrow-button"
     >
-      <i class="mi mi-arrow-left"><span class="u-sr-only"></span></i>
+      <img src="left-arrow-svgrepo-com.svg" alt="" class="w-8 h-8" />
     </button>
 
-    <div class="flex flex- gap-2">
+    <div class="flex gap-2 items-end">
       {#each Array(Math.ceil(testimonials.length / testimonialsToShow)) as _, i}
         <span
           class="md:w-2.5 md:h-2.5 w-2 h-2 rounded-full inline-block"
@@ -186,8 +190,12 @@
       {/each}
     </div>
 
-    <button on:click={goRight} class="" aria-label="right-arrow-button">
-      <i class="mi mi-arrow-right"><span class="u-sr-only"></span></i>
+    <button
+      on:click={goRight}
+      class="flex justify-center items-center text-[40px]"
+      aria-label="right-arrow-button"
+    >
+      <img src="right-arrow-svgrepo-com.svg" alt="" class="w-8 h-8" />
     </button>
   </div>
 </div>
